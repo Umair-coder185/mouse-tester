@@ -8,6 +8,7 @@ export function Header() {
     { name: "Polling Rate", href: "/polling-rate-test" },
     { name: "DPI", href: "/mouse-dpi-analyzer" },
     { name: "All Tests", href: "/all-tests" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (

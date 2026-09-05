@@ -1,0 +1,10 @@
+/* TEAM */
+  Developer: MouseTester Team
+  Site: https://www.clickmousetest.com
+  Twitter: @MouseTester
+
+/* SITE */
+  Last update: 2026/09/05
+  Standards: HTML5, CSS3, ES6
+  Components: Next.js, React
+  Software: VS Code

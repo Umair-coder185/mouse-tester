@@ -1,0 +1,36 @@
+# MouseTester - Comprehensive AI Overview
+
+## Introduction
+MouseTester is a complete, browser-based diagnostic toolkit designed for gamers, office workers, and hardware enthusiasts to test their computer mice. No installation is required.
+
+## Core Capabilities
+
+1. **Complete Mouse Test** (`/`)
+   - Overview of all basic mouse functions including left/right/middle clicks.
+
+2. **Double Click Test** (`/double-click-test`)
+   - Specifically checks for hardware switch wear that causes unintentional double-clicking (common in older gaming mice).
+
+3. **Polling Rate Test** (`/polling-rate-test`)
+   - Measures the frequency at which the mouse reports its position to the computer, measured in Hertz (Hz). Higher is generally better for gaming (e.g., 1000Hz or 4000Hz).
+
+4. **Scroll Wheel Test** (`/mouse-scroll-wheel-test`)
+   - Detects erratic scrolling, jumped lines, or broken encoder wheels.
+
+5. **DPI Analyzer** (`/mouse-dpi-analyzer`)
+   - Helps users calculate and verify the Dots Per Inch (DPI) setting of their mouse sensor.
+
+6. **Debounce Test Guide** (`/debounce-test-guide`)
+   - Educational resource and test for mouse switch debouncing times, an important metric for avoiding double clicks.
+
+7. **CPS Test** (`/cps-test`)
+   - Clicks Per Second speed test to measure user clicking speed.
+
+8. **Drag & Hold Test** (`/drag-test`)
+   - Diagnoses failing switches that accidentally release during a click-and-drag operation.
+
+9. **Accuracy Test** (`/mouse-accuracy-test`)
+   - Tests user aim and sensor accuracy.
+
+## Technical Context
+Built for modern web browsers. It runs entirely client-side using JavaScript, ensuring privacy and speed.

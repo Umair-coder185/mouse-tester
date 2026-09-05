@@ -1,0 +1,2 @@
+# MouseTester
+MouseTester provides browser-based mouse diagnostics. Users can check buttons, scrolling, polling rate, double-click issues, DPI, CPS, and more without installing any software. All testing is done entirely client-side.

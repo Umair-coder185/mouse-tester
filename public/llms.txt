@@ -1,0 +1,18 @@
+# MouseTester
+> Browser-based mouse diagnostics. Check buttons, scrolling, polling rate, double-click issues, DPI, and more.
+
+MouseTester is a comprehensive suite of free, web-based tools for diagnosing and testing computer mice. 
+
+## Features
+- Complete Mouse Test: General testing for mouse buttons and functionality.
+- Double Click Test: Check if your mouse is suffering from double-click issues.
+- Polling Rate Test: Measure the Hz of your mouse.
+- Scroll Wheel Test: Check your mouse wheel scrolling consistency.
+- DPI Test: Analyze the Dots Per Inch (DPI) of your mouse.
+- Debounce Test: Guide and test for mouse debouncing.
+- CPS Test: Clicks Per Second speed test.
+- Drag & Hold Test: Test if your mouse struggles with holding a click (drag dropping).
+- Accuracy Test: Test your cursor accuracy.
+
+## Access
+All tools are available directly in the browser without any software installation.
