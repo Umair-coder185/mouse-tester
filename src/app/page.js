@@ -26,17 +26,17 @@ export default function Home() {
     {
       title: "Scroll Wheel Test",
       description: "Check scroll step consistency, speed, and middle click reliability.",
-      href: "/scroll-test"
+      href: "/mouse-scroll-wheel-test"
     },
     {
       title: "DPI Test",
       description: "Estimate your true DPI by measuring physical movement distance.",
-      href: "/dpi-test"
+      href: "/mouse-dpi-analyzer"
     },
     {
       title: "Debounce Test",
       description: "Check for possible rapid switch chatter during press and release.",
-      href: "/debounce-test"
+      href: "/debounce-test-guide"
     },
     {
       title: "CPS Test",
@@ -50,8 +50,8 @@ export default function Home() {
     },
     {
       title: "Accuracy Test",
-      description: "Test your pointer precision and average geometric error.",
-      href: "/accuracy-test"
+      description: "Measure your tracking accuracy and cursor precision.",
+      href: "/mouse-accuracy-test"
     }
   ];
 
@@ -112,7 +112,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </Container>
+        </Container> 
       </section>
 
       {/* Main Tester Section */}

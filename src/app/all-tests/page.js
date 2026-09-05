@@ -19,7 +19,7 @@ export default function AllTestsPage() {
       tests: [
         { name: "Complete Mouse Test", path: "/", desc: "Verify basic inputs (Left, Right, Middle, Scroll, Movement)." },
         { name: "Double Click Test", path: "/double-click-test", desc: "Check if your switches are unintentionally sending multiple clicks." },
-        { name: "Scroll Wheel Test", path: "/scroll-test", desc: "Verify scroll step reliability and detect jumpy behavior." },
+        { name: "Scroll Wheel Test", path: "/mouse-scroll-wheel-test", desc: "Verify scroll step reliability and detect jumpy behavior." },
         { name: "Drag & Hold Test", path: "/drag-test", desc: "Check if your mouse accidentally releases items while dragging." },
       ]
     },
@@ -27,15 +27,15 @@ export default function AllTestsPage() {
       name: "Performance & Precision",
       tests: [
         { name: "Polling Rate Test", path: "/polling-rate-test", desc: "Measure the actual report rate of your mouse in Hz." },
-        { name: "DPI Test", path: "/dpi-test", desc: "Estimate your true DPI using physical measurement calibration." },
-        { name: "Accuracy Test", path: "/accuracy-test", desc: "Test your pointer precision and geometric error." },
+        { name: "DPI Test", path: "/mouse-dpi-analyzer", desc: "Estimate your true DPI using physical measurement calibration." },
+        { name: "Accuracy Test", path: "/mouse-accuracy-test", desc: "Test your pointer precision and geometric error." },
         { name: "CPS Test", path: "/cps-test", desc: "Measure your raw clicks per second." },
       ]
     },
     {
       name: "Advanced Button Diagnostics",
       tests: [
-        { name: "Debounce Test", path: "/debounce-test", desc: "Observe micro-chatter during deliberate press and release actions." },
+        { name: "Debounce Test", path: "/debounce-test-guide", desc: "Observe micro-chatter during deliberate press and release actions." },
       ]
     }
   ];

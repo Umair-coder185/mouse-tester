@@ -6,7 +6,7 @@ export function Header() {
     { name: "Mouse Test", href: "/#mouse-test" },
     { name: "Double Click", href: "/double-click-test" },
     { name: "Polling Rate", href: "/polling-rate-test" },
-    { name: "DPI", href: "/dpi-test" },
+    { name: "DPI", href: "/mouse-dpi-analyzer" },
     { name: "All Tests", href: "/all-tests" },
   ];
 
