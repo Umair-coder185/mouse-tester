@@ -69,6 +69,13 @@ export default function PollingRateTestPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mt-6 mb-6">
               How to Test Polling Rate (Mouse, Keyboard & Controller)
             </h1>
+            <div className="my-8 relative w-full overflow-hidden rounded-2xl shadow-2xl border border-border">
+              <img 
+                src="/images/keyboard-polling-hero.png" 
+                alt="Keyboard Polling Rate Test Setup" 
+                className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Your mouse feels a little off during ranked matches, and you can't tell if it's you or your gear. A skipped flick shot or a stuttery aim swing often traces back to one hidden number: your device's real polling rate, not the one printed on the box. Run a polling rate test below, move your mouse or press your controller stick for about fifteen seconds, and you'll see the true Hz your setup delivers right now.
             </p>

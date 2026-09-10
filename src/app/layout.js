@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import "./globals.css";
@@ -49,6 +50,20 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative">
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-24VNFH6HDE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-24VNFH6HDE');
+          `}
+        </Script>
+        
         <a 
           href="#main-content" 
           className="absolute left-0 top-0 -translate-y-full bg-primary text-primary-foreground px-4 py-2 z-50 transition-transform focus:translate-y-0"
