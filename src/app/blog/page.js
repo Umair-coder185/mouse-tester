@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata = {
@@ -39,7 +40,13 @@ export default function BlogIndex() {
               {/* Cover Image */}
               <div className="w-full h-56 bg-muted relative overflow-hidden">
                 {post.meta.coverImage ? (
-                  <img src={post.meta.coverImage} alt={post.meta.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image 
+                    src={post.meta.coverImage} 
+                    alt={post.meta.title} 
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center text-muted-foreground">
                     <svg className="w-12 h-12 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>

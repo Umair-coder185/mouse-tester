@@ -3,7 +3,7 @@ title: 'How to Check Mouse DPI (Complete Guide)'
 date: '2026-09-06'
 description: 'Wondering how to check mouse DPI fast? Follow these simple software, online, and manual methods to find your exact DPI in minutes.'
 author: 'MouseTester Team'
-coverImage: '/images/mouse-dpi-hero.png'
+coverImage: '/images/mouse-dpi-hero.webp'
 readTime: '8 min read'
 tags:
   - 'mouse dpi'
@@ -50,7 +50,7 @@ faqSchema: |
   }
 ---
 
-![Mouse DPI Guide](/images/mouse-dpi-hero.png)
+![Mouse DPI Guide](/images/mouse-dpi-hero.webp)
 
 Your aim feels off, your cursor overshoots every icon, or a game keeps flagging your sensitivity as unusual. The real culprit is often a mouse DPI you have never actually confirmed. Guessing at settings wastes practice time and wrecks your muscle memory. This guide walks through four reliable ways to check mouse DPI, from official specs to a two-minute manual test, so you know your exact number today.
 

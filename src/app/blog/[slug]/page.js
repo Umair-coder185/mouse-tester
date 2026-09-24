@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BlogToc } from '@/components/blog/BlogToc';
 import { JsonLd } from '@/components/ui/JsonLd';
 
@@ -46,7 +47,7 @@ export default async function BlogPost({ params }) {
 
   // Extract headings from markdown
   const headings = [];
-  const lines = post.content.split('\n');
+  const lines = post.content.split(/\r?\n/);
   let isCodeBlock = false;
 
   lines.forEach((line) => {
@@ -92,6 +93,16 @@ export default async function BlogPost({ params }) {
       <div className="p-6 bg-cyan-50 dark:bg-cyan-950/30 text-cyan-900 dark:text-cyan-200 rounded-xl border border-cyan-200 dark:border-cyan-900/50 shadow-sm my-6">
         <blockquote className="opacity-90 leading-relaxed font-medium m-0" {...props} />
       </div>
+    ),
+    img: ({ node, ...props }) => (
+      <Image 
+        src={props.src} 
+        alt={props.alt || 'Blog image'} 
+        width={1200} 
+        height={630} 
+        className="rounded-xl w-full h-auto object-cover my-8 shadow-md"
+        sizes="(max-width: 768px) 100vw, 800px"
+      />
     ),
   };
 

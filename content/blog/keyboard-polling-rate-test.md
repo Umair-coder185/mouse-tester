@@ -3,7 +3,7 @@ title: 'How to Test Your Keyboard Polling Rate (Free Online Hz Checker)'
 date: '2026-09-10'
 description: 'Test your keyboard polling rate online free. Check Hz, latency, and stability from 125Hz to 8000Hz. Try the checker now!'
 author: 'MouseTester Team'
-coverImage: '/images/keyboard-polling-hero.png'
+coverImage: '/images/keyboard-polling-hero.webp'
 readTime: '6 min read'
 tags:
   - 'keyboard polling rate'
@@ -11,7 +11,7 @@ tags:
   - 'gaming setup'
 ---
 
-![Keyboard Polling Test](/images/keyboard-polling-hero.png)
+![Keyboard Polling Test](/images/keyboard-polling-hero.webp)
 
 You bought a gaming keyboard rated for 1000Hz, maybe even 8000Hz, but you have no real way to confirm it. Missed inputs and laggy key presses can cost you a match, and marketing claims don't always match what your setup actually delivers. This guide walks you through a free keyboard polling rate test you can run right now, plus how to read the results and fix a low score.
 
