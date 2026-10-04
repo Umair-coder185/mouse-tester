@@ -127,12 +127,28 @@ export default async function BlogPost({ params }) {
       {/* Header Section */}
       <div className="bg-gradient-to-b from-primary/5 to-background border-b border-border py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Link 
-            href="/blog"
-            className="text-primary hover:text-primary-hover font-medium flex items-center mb-8 inline-flex transition-colors"
-          >
-            &larr; Back to all posts
-          </Link>
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center flex-wrap gap-2 text-sm text-muted-foreground">
+              <li>
+                <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+              </li>
+              <li>
+                <span className="text-foreground font-medium truncate max-w-[200px] md:max-w-[400px] block" aria-current="page">{post.meta.title}</span>
+              </li>
+            </ol>
+          </nav>
           
           <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted-foreground mb-6">
             <time dateTime={post.meta.date} className="flex items-center gap-1.5">
@@ -177,13 +193,21 @@ export default async function BlogPost({ params }) {
               </ReactMarkdown>
             </div>
             
-            {/* Footer Links */}
-            <div className="pt-12 border-t border-border flex flex-wrap gap-4 mt-12">
-              <Link href="/" className="inline-flex h-10 items-center justify-center rounded-md border border-border bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-muted">
-                Back to Complete Mouse Test
+            {/* Navigation Boxes */}
+            <div className="pt-12 border-t border-border mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <Link href="/" className="group flex flex-col items-center justify-center p-8 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Home</h3>
+                <p className="text-sm text-muted-foreground text-center">Go back to the main page</p>
               </Link>
-              <Link href="/mouse-dpi-analyzer" className="inline-flex h-10 items-center justify-center rounded-md border border-border bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-muted">
-                Run DPI Analyzer
+              <Link href="/all-tools" className="group flex flex-col items-center justify-center p-8 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">All Tools</h3>
+                <p className="text-sm text-muted-foreground text-center">Explore more testing tools</p>
               </Link>
             </div>
           </article>

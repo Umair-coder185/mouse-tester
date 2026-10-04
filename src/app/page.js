@@ -5,6 +5,7 @@ import { MouseTester } from "../components/tools/MouseTester";
 import { JsonLd } from "../components/ui/JsonLd";
 import { SITE_CONFIG } from "../lib/site";
 import { FaqAccordion } from "../components/ui/FaqAccordion";
+import { ScrollToButton } from "../components/ui/ScrollToButton";
 
 export const metadata = {
   alternates: {
@@ -146,14 +147,14 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link 
-                href="#mouse-test" 
+              <ScrollToButton 
+                targetId="mouse-test"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 text-base font-bold text-white shadow-lg shadow-blue-500/25 transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
               >
                 Start Mouse Test
-              </Link>
+              </ScrollToButton>
               <Link 
-                href="#all-tests" 
+                href="/all-tests" 
                 className="inline-flex h-12 items-center justify-center rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-slate-900 shadow-sm transition-all hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:bg-slate-900 dark:text-white dark:border-slate-800 dark:hover:bg-slate-800"
               >
                 View All Tests <span className="ml-2 text-purple-500 transition-transform group-hover:translate-x-1">→</span>

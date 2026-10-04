@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export function Header() {
   const navLinks = [
-    { name: "Mouse Test", href: "/#mouse-test" },
+    { name: "Mouse Test", href: "/" },
     { name: "Double Click", href: "/double-click-test" },
     { name: "Polling Rate", href: "/polling-rate-test" },
     { name: "DPI", href: "/mouse-dpi-analyzer" },
-    { name: "All Tests", href: "/#all-tests" },
+    { name: "All Tests", href: "/all-tests" },
     { name: "Blog", href: "/blog" },
   ];
 
@@ -42,7 +42,7 @@ export function Header() {
           
           <div className="flex items-center gap-4">
             <Link 
-              href="/#mouse-test" 
+              href="/" 
               className="inline-flex h-9 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-2 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
             >
               Test Your Mouse
