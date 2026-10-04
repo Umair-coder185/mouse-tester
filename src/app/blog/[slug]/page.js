@@ -23,8 +23,10 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const seoTitle = post.meta.seoTitle || post.meta.title;
+
   return {
-    title: `${post.meta.title} | MouseTester Blog`,
+    title: seoTitle.includes('|') ? seoTitle : `${seoTitle} | MouseTester Blog`,
     description: post.meta.description,
   };
 }
@@ -104,6 +106,9 @@ export default async function BlogPost({ params }) {
         sizes="(max-width: 768px) 100vw, 800px"
       />
     ),
+    a: ({ node, ...props }) => (
+      <a className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium underline underline-offset-4" {...props} />
+    ),
   };
 
   let faqSchemaObj = null;
@@ -166,7 +171,7 @@ export default async function BlogPost({ params }) {
           
           {/* Article Body */}
           <article className="lg:col-span-8">
-            <div className="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:text-foreground prose-a:text-primary hover:prose-a:text-primary-hover prose-strong:text-foreground prose-img:rounded-xl marker:text-primary">
+            <div className="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:text-foreground prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-300 prose-a:underline prose-a:underline-offset-4 prose-strong:text-foreground prose-img:rounded-xl marker:text-primary">
               <ReactMarkdown components={customComponents}>
                 {post.content}
               </ReactMarkdown>
