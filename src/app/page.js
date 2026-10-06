@@ -6,6 +6,8 @@ import { JsonLd } from "../components/ui/JsonLd";
 import { SITE_CONFIG } from "../lib/site";
 import { FaqAccordion } from "../components/ui/FaqAccordion";
 import { ScrollToButton } from "../components/ui/ScrollToButton";
+import Image from "next/image";
+import { getAllPosts } from "../lib/blog";
 
 export const metadata = {
   alternates: {
@@ -14,6 +16,8 @@ export const metadata = {
 };
 
 export default function Home() {
+  const recentPosts = getAllPosts().slice(0, 4);
+
   const faqs = [
     { question: "What exactly is a mouse tester tool?", answer: "A mouse tester is an online diagnostic utility designed to verify if your mouse buttons, scroll wheel, and optical sensor are registering inputs correctly without any lag or double-clicking." },
     { question: "Do I need to install software or drivers to test my mouse?", answer: "No! Our mouse tester runs entirely in your web browser. There are no drivers or third-party software installations required to check your hardware." },
@@ -457,6 +461,122 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Latest Guides Section */}
+      <section className="py-24 bg-background relative overflow-hidden border-t border-border">
+        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10"></div>
+        <Container relative z-10>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-4">
+                Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Guides & Fixes</span>
+              </h2>
+              <p className="text-xl text-slate-600 dark:text-slate-400">
+                Read our latest articles on troubleshooting, fixing, and maintaining your mouse.
+              </p>
+            </div>
+            <Link 
+              href="/blog" 
+              className="inline-flex h-12 items-center justify-center rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-slate-900 shadow-sm transition-all hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:bg-slate-900 dark:text-white dark:border-slate-800 dark:hover:bg-slate-800 shrink-0 group"
+            >
+              View All Guides <span className="ml-2 text-primary transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {recentPosts.map((post) => (
+              <Link 
+                key={post.slug} 
+                href={`/blog/${post.slug}`}
+                className="group flex flex-col overflow-hidden rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 dark:hover:bg-slate-900"
+              >
+                <div className="relative h-48 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                  {post.meta.coverImage ? (
+                    <Image 
+                      src={post.meta.coverImage} 
+                      alt={post.meta.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-slate-400 font-medium">
+                      No Image
+                    </div>
+                  )}
+                  {/* Subtle overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="flex flex-col flex-grow p-6">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-3 tracking-wide uppercase">
+                    <time dateTime={post.meta.date}>
+                      {new Date(post.meta.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
+                      })}
+                    </time>
+                    <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+                    <span>{post.meta.readTime || '5 min read'}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary transition-colors leading-snug">
+                    {post.meta.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-grow leading-relaxed">
+                    {post.meta.description}
+                  </p>
+                  <div className="mt-auto text-primary text-sm font-bold flex items-center">
+                    Read Article 
+                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* About Founder Section */}
+      <section className="py-24 bg-slate-950 relative overflow-hidden border-t border-slate-800">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+              {/* Background Glow */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start relative z-10">
+                {/* Founder Image */}
+                <div className="relative w-48 h-56 md:w-56 md:h-64 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-xl">
+                  <Image 
+                    src="/images/founder.png" 
+                    alt="Umair Tufail" 
+                    fill 
+                    className="object-cover" 
+                    sizes="(max-width: 768px) 192px, 224px"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex-grow text-center md:text-left pt-2">
+                  <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-900/40 border border-blue-500/20 text-blue-300 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+                    About the Founder
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">
+                    Who Builds MouseTester
+                  </h2>
+                  <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                    MouseTester is built and maintained by <strong className="text-white">Umair Tufail</strong>, a <strong className="text-white">Content writer and Next.js developer</strong> focused on building practical, browser-based tools for hardware testing, SEO, and AI workflows. Every tool is designed to be simple, useful, and accessible without unnecessary signup requirements.
+                  </p>
+                  <p className="text-slate-400 text-sm">
+                    Have a tool request or found a bug? <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">Contact us</Link> or <Link href="/about" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">read more about the site</Link>.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
