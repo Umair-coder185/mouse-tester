@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Container } from "../../components/layout/Container";
 
 export const metadata = {
-  title: "About | MouseTester",
-  description: "Learn about MouseTester, a collection of browser-based diagnostic tools designed to help you observe and measure your mouse's behavior.",
+  title: "About | ClickMouseTest",
+  description: "Learn about ClickMouseTest, a collection of browser-based diagnostic tools designed to help you observe and measure your mouse's behavior.",
   alternates: {
     canonical: '/about',
   },
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl">
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
-              About MouseTester
+              About ClickMouseTest
             </h1>
             <p className="text-lg text-muted-foreground">
               Browser-based diagnostics for observing mouse input behavior.
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-3xl space-y-8 text-lg text-muted-foreground leading-relaxed">
             <p>
-              MouseTester provides a suite of interactive tools running directly in your web browser. 
+              ClickMouseTest provides a suite of interactive tools running directly in your web browser. 
               The project is designed to help users diagnose common issues with their computer mice, 
               such as failing microswitches (double clicking), jumpy scroll wheels, and sensor behavior.
             </p>

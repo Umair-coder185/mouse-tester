@@ -2,8 +2,8 @@ import { Container } from "../../components/layout/Container";
 import { SITE_CONFIG } from "../../lib/site";
 
 export const metadata = {
-  title: "Privacy Policy | MouseTester",
-  description: "Read our privacy policy. Learn how MouseTester processes your local diagnostic data.",
+  title: "Privacy Policy | ClickMouseTest",
+  description: "Read our privacy policy. Learn how ClickMouseTest processes your local diagnostic data.",
   alternates: {
     canonical: '/privacy',
   },

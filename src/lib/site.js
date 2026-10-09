@@ -18,7 +18,7 @@ export const getSiteUrl = () => {
 export const SITE_URL = getSiteUrl();
 
 export const SITE_CONFIG = {
-  name: 'MouseTester',
+  name: 'ClickMouseTest',
   description: 'Browser-based mouse diagnostics. Check buttons, scrolling, polling rate, double-click issues, DPI, and more.',
   url: SITE_URL,
 };

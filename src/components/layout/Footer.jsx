@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
 
 export function Footer() {
@@ -8,14 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-5 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 shadow-sm shadow-blue-500/20 transition-transform group-hover:scale-105">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <rect x="5" y="2" width="14" height="20" rx="7" />
-                  <path d="M12 2v6" />
-                </svg>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg overflow-hidden shadow-sm transition-transform group-hover:scale-105 border border-white/10">
+                <Image src="/icon.png" alt="ClickMouseTest Logo" width={40} height={40} className="object-cover" />
               </div>
               <span className="text-2xl font-black tracking-tight text-white">
-                Mouse<span className="text-cyan-500">Tester</span>
+                Click<span className="text-cyan-500">MouseTest</span>
               </span>
             </Link>
             <p className="text-[15px] leading-relaxed text-slate-400 mb-8 max-w-sm">
@@ -57,13 +55,13 @@ export function Footer() {
             
             <div>
               <h3 className="text-[13px] font-bold tracking-[0.15em] text-slate-500 uppercase mb-4">Support</h3>
-              <p className="text-[15px] text-slate-400 hover:text-white transition-colors cursor-pointer">contact@mousetester.com</p>
+              <p className="text-[15px] text-slate-400 hover:text-white transition-colors cursor-pointer">contact@clickmousetest.com</p>
             </div>
           </div>
         </div>
         
         <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} MouseTester. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ClickMouseTest. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms</Link>
@@ -71,7 +69,7 @@ export function Footer() {
         </div>
         
         <div className="mt-6 text-[13px] text-slate-600 max-w-4xl">
-          <p>MouseTester is an independent online diagnostic platform. All processing happens locally in your browser. No input data is collected, stored, or transmitted to any server.</p>
+          <p>ClickMouseTest is an independent online diagnostic platform. All processing happens locally in your browser. No input data is collected, stored, or transmitted to any server.</p>
         </div>
       </Container>
     </footer>

@@ -2,8 +2,8 @@ import { Container } from "../../components/layout/Container";
 import { SITE_CONFIG } from "../../lib/site";
 
 export const metadata = {
-  title: "Terms of Use | MouseTester",
-  description: "Terms of Use for the MouseTester website and diagnostic tools.",
+  title: "Terms of Use | ClickMouseTest",
+  description: "Terms of Use for the ClickMouseTest website and diagnostic tools.",
   alternates: {
     canonical: '/terms',
   },

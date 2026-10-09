@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 export function Header() {
   const navLinks = [
     { name: "Mouse Test", href: "/" },
@@ -16,14 +16,11 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6 md:gap-8">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 shadow-sm shadow-blue-500/20 transition-transform group-hover:scale-105">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <rect x="5" y="2" width="14" height="20" rx="7" />
-                  <path d="M12 2v6" />
-                </svg>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden border border-white/10 shadow-sm transition-transform group-hover:scale-105">
+                <Image src="/icon.png" alt="ClickMouseTest Logo" width={40} height={40} className="object-cover" />
               </div>
               <span className="text-xl font-black tracking-tight text-white">
-                Mouse<span className="text-cyan-400">Tester</span>
+                Click<span className="text-cyan-400">MouseTest</span>
               </span>
             </Link>
             

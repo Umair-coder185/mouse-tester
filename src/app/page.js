@@ -566,10 +566,10 @@ export default function Home() {
                     About the Founder
                   </div>
                   <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">
-                    Who Builds MouseTester
+                    Who Builds ClickMouseTest
                   </h2>
                   <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                    MouseTester is built and maintained by <strong className="text-white">Umair Tufail</strong>, a <strong className="text-white">Content writer and Next.js developer</strong> focused on building practical, browser-based tools for hardware testing, SEO, and AI workflows. Every tool is designed to be simple, useful, and accessible without unnecessary signup requirements.
+                    ClickMouseTest is built and maintained by <strong className="text-white">Umair Tufail</strong>, a <strong className="text-white">Content writer and Next.js developer</strong> focused on building practical, browser-based tools for hardware testing, SEO, and AI workflows. Every tool is designed to be simple, useful, and accessible without unnecessary signup requirements.
                   </p>
                   <p className="text-slate-400 text-sm">
                     Have a tool request or found a bug? <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">Contact us</Link> or <Link href="/about" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">read more about the site</Link>.
