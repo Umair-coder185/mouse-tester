@@ -569,8 +569,19 @@ export default function Home() {
                     Who Builds ClickMouseTest
                   </h2>
                   <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                    ClickMouseTest is built and maintained by <strong className="text-white">Umair Tufail</strong>, a <strong className="text-white">Content writer and Next.js developer</strong> focused on building practical, browser-based tools for hardware testing, SEO, and AI workflows. Every tool is designed to be simple, useful, and accessible without unnecessary signup requirements.
+                    ClickMouseTest is built and maintained by <a href="https://www.linkedin.com/in/umair-nextjs-dev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan-400 font-bold underline underline-offset-4 transition-colors">Umair Tufail</a>, a <strong className="text-white">Content writer and Next.js developer</strong> focused on building practical, browser-based tools for hardware testing, SEO, and AI workflows. Every tool is designed to be simple, useful, and accessible without unnecessary signup requirements.
                   </p>
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <a 
+                      href="https://www.linkedin.com/in/umair-nextjs-dev" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0a66c2]/20 hover:bg-[#0a66c2]/30 border border-[#0a66c2]/40 text-blue-300 hover:text-white text-sm font-semibold transition-all shadow-sm"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                      Connect on LinkedIn
+                    </a>
+                  </div>
                   <p className="text-slate-400 text-sm">
                     Have a tool request or found a bug? <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">Contact us</Link> or <Link href="/about" className="text-blue-400 hover:text-blue-300 font-medium hover:underline underline-offset-4 transition-colors">read more about the site</Link>.
                   </p>
