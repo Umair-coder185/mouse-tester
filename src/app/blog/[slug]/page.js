@@ -39,6 +39,80 @@ function generateId(text) {
     .replace(/(^-|-$)+/g, '');
 }
 
+function parseTableLines(lines) {
+  if (lines.length < 2) return null;
+  const parseRow = (line) =>
+    line
+      .trim()
+      .replace(/^\|/, '')
+      .replace(/\|$/, '')
+      .split('|')
+      .map((cell) => cell.trim());
+
+  const headers = parseRow(lines[0]);
+  const separator = lines[1];
+  if (!separator.includes('---')) return null;
+
+  const rows = [];
+  for (let i = 2; i < lines.length; i++) {
+    if (lines[i].trim()) {
+      rows.push(parseRow(lines[i]));
+    }
+  }
+
+  return { headers, rows };
+}
+
+function parseMarkdownWithTables(content) {
+  const blocks = [];
+  const lines = content.split(/\r?\n/);
+  let currentMarkdown = [];
+  let inTable = false;
+  let tableLines = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    const isTableLine = trimmed.startsWith('|') && trimmed.endsWith('|');
+
+    if (isTableLine) {
+      if (!inTable) {
+        if (currentMarkdown.length > 0) {
+          blocks.push({ type: 'markdown', content: currentMarkdown.join('\n') });
+          currentMarkdown = [];
+        }
+        inTable = true;
+      }
+      tableLines.push(line);
+    } else {
+      if (inTable) {
+        const parsedTable = parseTableLines(tableLines);
+        if (parsedTable) {
+          blocks.push({ type: 'table', ...parsedTable });
+        } else {
+          blocks.push({ type: 'markdown', content: tableLines.join('\n') });
+        }
+        tableLines = [];
+        inTable = false;
+      }
+      currentMarkdown.push(line);
+    }
+  }
+
+  if (inTable && tableLines.length > 0) {
+    const parsedTable = parseTableLines(tableLines);
+    if (parsedTable) {
+      blocks.push({ type: 'table', ...parsedTable });
+    } else {
+      blocks.push({ type: 'markdown', content: tableLines.join('\n') });
+    }
+  } else if (currentMarkdown.length > 0) {
+    blocks.push({ type: 'markdown', content: currentMarkdown.join('\n') });
+  }
+
+  return blocks;
+}
+
 export default async function BlogPost({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -46,6 +120,8 @@ export default async function BlogPost({ params }) {
   if (!post) {
     notFound();
   }
+
+  const blocks = parseMarkdownWithTables(post.content);
 
   // Extract headings from markdown
   const headings = [];
@@ -188,9 +264,42 @@ export default async function BlogPost({ params }) {
           {/* Article Body */}
           <article className="lg:col-span-8">
             <div className="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:text-foreground prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:text-blue-800 dark:hover:prose-a:text-blue-300 prose-a:underline prose-a:underline-offset-4 prose-strong:text-foreground prose-img:rounded-xl marker:text-primary">
-              <ReactMarkdown components={customComponents}>
-                {post.content}
-              </ReactMarkdown>
+              {blocks.map((block, idx) => {
+                if (block.type === 'markdown') {
+                  return (
+                    <ReactMarkdown key={idx} components={customComponents}>
+                      {block.content}
+                    </ReactMarkdown>
+                  );
+                }
+
+                return (
+                  <div key={idx} className="overflow-x-auto bg-card rounded-xl border border-border shadow-sm my-8 not-prose">
+                    <table className="w-full text-left border-collapse">
+                      <thead className="bg-muted/50 text-foreground">
+                        <tr>
+                          {block.headers.map((th, hIdx) => (
+                            <th key={hIdx} className="p-4 font-bold border-b border-border">
+                              <ReactMarkdown components={customComponents}>{th}</ReactMarkdown>
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border text-base md:text-lg">
+                        {block.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className="hover:bg-muted/30 transition-colors">
+                            {row.map((td, dIdx) => (
+                              <td key={dIdx} className="p-4 text-muted-foreground border-r border-border last:border-r-0">
+                                <ReactMarkdown components={customComponents}>{td}</ReactMarkdown>
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              })}
             </div>
             
             {/* Navigation Boxes */}
