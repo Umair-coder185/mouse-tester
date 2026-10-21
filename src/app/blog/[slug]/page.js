@@ -196,9 +196,25 @@ export default async function BlogPost({ params }) {
     }
   }
 
+  let customSchemaObj = null;
+  if (post.meta.schema) {
+    try {
+      customSchemaObj = JSON.parse(post.meta.schema);
+    } catch (e) {
+      console.error("Failed to parse schema from frontmatter", e);
+    }
+  }
+
   return (
     <>
-      {faqSchemaObj && <JsonLd type="FAQPage" data={faqSchemaObj} />}
+      {customSchemaObj ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(customSchemaObj).replace(/</g, '\\u003c') }}
+        />
+      ) : (
+        faqSchemaObj && <JsonLd type="FAQPage" data={faqSchemaObj} />
+      )}
       
       {/* Header Section */}
       <div className="bg-gradient-to-b from-primary/5 to-background border-b border-border py-12 md:py-16">
