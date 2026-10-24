@@ -182,9 +182,20 @@ export default async function BlogPost({ params }) {
         sizes="(max-width: 768px) 100vw, 800px"
       />
     ),
-    a: ({ node, ...props }) => (
-      <a className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium underline underline-offset-4" {...props} />
-    ),
+    a: ({ node, href, children, ...props }) => {
+      const isExternal = href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes('clickmousetest.com');
+      return (
+        <a 
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium underline underline-offset-4" 
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    },
   };
 
   let faqSchemaObj = null;
