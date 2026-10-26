@@ -178,7 +178,7 @@ export default async function BlogPost({ params }) {
         alt={props.alt || 'Blog image'} 
         width={1200} 
         height={630} 
-        className="rounded-xl w-full h-auto object-cover my-8 shadow-md"
+        className="rounded-xl w-full h-auto object-cover my-8 shadow-md mx-auto block"
         sizes="(max-width: 768px) 100vw, 800px"
       />
     ),
