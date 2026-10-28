@@ -11,17 +11,14 @@ export default function robots() {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
           '/private/',
         ],
       },
-      // Optional: Block common AI crawlers if desired for a tool site
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'Anthropic-ai'],
+        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'anthropic-ai'],
         disallow: ['/'],
       },
     ],
     sitemap: `${SITE_CONFIG.url}/sitemap.xml`,
-    host: SITE_CONFIG.url,
   };
 }
