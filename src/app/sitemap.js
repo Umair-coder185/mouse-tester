@@ -41,6 +41,7 @@ export default function sitemap() {
   const staticPaths = [
     ...TOOL_ROUTES.map((route) => route.path),
     "/about",
+    "/contact",
     "/methodology",
     "/privacy",
     "/terms",

@@ -71,7 +71,7 @@ export default function PollingRateTestPage() {
             </h1>
             <div className="my-8 relative w-full overflow-hidden rounded-2xl shadow-2xl border border-border">
               <img 
-                src="/images/keyboard-polling-hero.png" 
+                src="/images/keyboard-polling-hero.webp" 
                 alt="Keyboard Polling Rate Test Setup" 
                 className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
               />

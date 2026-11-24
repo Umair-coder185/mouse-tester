@@ -102,7 +102,7 @@ No. The contacts travel the same distance whether you tap or hammer, so a heavy 
 
 How long do mouse switches last compared with everything else inside? Often shorter than you'd hope, but other mouse components fail too. Mouse skates wear down on rough surfaces, making glides uneven. The mouse cable on a wired mouse frays near the connector, while a wireless mouse suffers battery degradation over time.
 
-Furthermore, the mouse sensor can clog with dirt, which causes poor tracking. A quick run of the [DPI Analyzer](/dpi-analyzer) shows whether tracking drifts, and the [Polling Rate Test](/polling-rate-test) reveals unstable reporting.
+Furthermore, the mouse sensor can clog with dirt, which causes poor tracking. A quick run of the [DPI Analyzer](/mouse-dpi-analyzer) shows whether tracking drifts, and the [Polling Rate Test](/polling-rate-test) reveals unstable reporting.
 
 ## How to Test Your Mouse Switches Today
 

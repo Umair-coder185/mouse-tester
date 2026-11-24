@@ -47,6 +47,7 @@ export function Footer() {
               <h3 className="text-[13px] font-bold tracking-[0.15em] text-white uppercase mb-6">Company</h3>
               <ul className="space-y-4 text-[15px] text-slate-400">
                 <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                 <li><Link href="/methodology" className="hover:text-white transition-colors">How Our Tests Work</Link></li>
                 <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>

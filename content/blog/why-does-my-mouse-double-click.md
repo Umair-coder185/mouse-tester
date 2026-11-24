@@ -118,7 +118,7 @@ Now it's time to fix mouse double clicking for good. Work through these steps in
 Most people skip step one and waste an evening. Don't. A mouse that double clicks on a friend's laptop is a faulty mouse, and no setting will cure it.
 
 ## Why Does My Mouse Double Click? Match Your Symptom
-Use the table below as a fast mouse troubleshooting map, and read our [mouse troubleshooting guide](/blog/mouse-troubleshooting) for deeper steps. Find the row that matches your situation, then follow the first fix.
+Use the table below as a fast mouse troubleshooting map, and read our [mouse troubleshooting guide](/blog/left-click-not-working-on-mouse) for deeper steps. Find the row that matches your situation, then follow the first fix.
 
 | Symptom | Likely cause | Best first fix |
 | --- | --- | --- |
@@ -133,12 +133,12 @@ Notice that one symptom can hide two causes. A mouse that double clicks only whi
 ## Repair or Replace? An Honest Look
 Mouse repair costs little if you can solder. A donor micro-switch from a dead mouse can swap in, and many hobbyists do exactly that. However, the work needs steady hands, and it can void your warranty.
 
-Gaming models differ. A gaming mouse with optical switches reduces contact bounce because a light beam detects the press instead of touching metal. Razer, for instance, markets optical switches built this way. An office mouse costs less, so mouse replacement is usually the quicker path. Browse our [gaming mouse buying guide](/blog/best-gaming-mouse) if you plan to upgrade.
+Gaming models differ. A gaming mouse with optical switches reduces contact bounce because a light beam detects the press instead of touching metal. Razer, for instance, markets optical switches built this way. An office mouse costs less, so mouse replacement is usually the quicker path. Browse our [gaming mouse settings guide](/blog/best-dpi-and-sensitivity-settings-for-gaming) if you plan to upgrade.
 
 ## Confirm the Fault With a Mouse Test
 Guessing wastes time, so run the Double Click Test next. Click once, slowly, and watch the counter. If two clicks appear within a blink, the switch is chattering. Humans can't press twice that fast, but a worn switch can.
 
-Next, open the [Mouse Test](/mouse-test) to check every button, then the [Polling Rate Test](/polling-rate-test) to catch signal drops on a wireless model. Moreover, the [DPI Analyzer](/dpi-analyzer) shows whether cursor jumps come from the sensor rather than the buttons. That way you know which part to blame.
+Next, open the [Mouse Test](/) to check every button, then the [Polling Rate Test](/polling-rate-test) to catch signal drops on a wireless model. Moreover, the [DPI Analyzer](/mouse-dpi-analyzer) shows whether cursor jumps come from the sensor rather than the buttons. That way you know which part to blame.
 
 ## How to Stop It Happening Again
 Prevention is cheap. Replace batteries early, wipe the buttons monthly and keep drinks away from the desk. Moreover, treat the cable gently by avoiding sharp bends near the plug.
