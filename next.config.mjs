@@ -4,6 +4,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/all-tools',
+        destination: '/all-tests',
+        permanent: true,
+      },
+      {
         source: '/dpi-analyzer',
         destination: '/mouse-dpi-analyzer',
         permanent: true,

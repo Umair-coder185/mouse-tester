@@ -102,10 +102,10 @@ export default function ContactPage() {
 
               <div className="pt-4 border-t border-border flex flex-wrap gap-4">
                 <Link
-                  href="/all-tools"
+                  href="/all-tests"
                   className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary-hover text-sm"
                 >
-                  Explore All Tools
+                  Explore All Tests
                 </Link>
                 <Link
                   href="/about"
